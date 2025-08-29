@@ -4,7 +4,7 @@ import { added } from "../redux/todos/action";
 import { FaPlus, FaRegStickyNote } from "react-icons/fa";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-//
+
 export default function TodoFrom() {
   const dispatch = useDispatch();
   const [input, setInput] = useState("");
