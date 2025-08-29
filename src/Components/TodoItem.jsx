@@ -4,7 +4,7 @@ import { toggled, colorSelected, deleted, edited } from "../redux/todos/action";
 import { FaTrash, FaEdit, FaCheck } from "react-icons/fa";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-//
+
 export default function TodoItem({ todo }) {
   const dispatch = useDispatch();
   const { id, text, completed, color } = todo;
