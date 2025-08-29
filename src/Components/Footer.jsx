@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { allComplete, clearCompleted } from "../redux/todos/action";
 import { FaCheckDouble, FaTrashAlt } from "react-icons/fa";
 import { toast } from "react-toastify";
-//
+
 const Footer = () => {
   const dispatch = useDispatch();
 

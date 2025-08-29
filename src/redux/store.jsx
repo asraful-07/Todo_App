@@ -7,8 +7,8 @@ const store = createStore(
 );
 
 export default store;
-
-// // store.jsx
+//
+// store.jsx
 // import { createStore } from "redux";
 // import { composeWithDevTools } from "redux-devtools-extension";
 // import rootReducer from "./rootReducer";
