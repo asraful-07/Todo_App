@@ -10,7 +10,7 @@ This project demonstrates clean state management, responsive UI/UX, and essentia
 - ✅ Add, Edit, Delete todos
 - 🎨 Change todo colors (Green, Yellow, Red)
 - ✔️ Toggle complete / incomplete
-- ✏️ Inline editing with `Enter` to save & `ESC` to cancel
+- ✏️ Inline editing with `Enter` to save.
 - 🔍 Filters (All, Active, Completed)
 - 🗑️ Clear completed todos
 - 📊 Live statistics in the header
