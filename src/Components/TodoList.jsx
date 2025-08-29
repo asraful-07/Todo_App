@@ -18,7 +18,7 @@ const TodoList = () => {
     }
     return true;
   };
-  //
+
   const filterByColors = (todo) => {
     if (filters.colors.length === 0) return true;
     return filters.colors.includes(todo.color);
