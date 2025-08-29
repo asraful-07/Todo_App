@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { setStatusFilter, toggleColorFilter } from "../redux/filters/action";
-//
+
 export default function Filter() {
   const todos = useSelector((state) => state.todos);
   const filters = useSelector((state) => state.filters);
