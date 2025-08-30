@@ -17,7 +17,7 @@ const Footer = () => {
   };
 
   return (
-    <ul className="flex justify-between my-4 text-xs text-gray-500">
+    <ul className="flex justify-between my-4 text-sm text-gray-500">
       <li
         onClick={handleCompleteAll}
         className="flex items-center space-x-1 cursor-pointer hover:text-green-600"

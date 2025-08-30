@@ -35,7 +35,7 @@ const TodoList = () => {
   return (
     <div className="my-4">
       {filteredTodos.length === 0 ? (
-        <p className="text-gray-500 text-center py-4">No todos available....</p>
+        <p className="text-gray-500 text-center p-4">No todos available....</p>
       ) : (
         filteredTodos.map((todo) => <TodoItem key={todo.id} todo={todo} />)
       )}

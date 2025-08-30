@@ -5,7 +5,7 @@ export const initialState = [
     completed: true,
     date: "2025-09-01",
     description:
-      "Tumar current setup proper edit functionality ready kore dei.",
+      "Complete the official React documentation and build a small project to understand components, state, and props.",
   },
   {
     id: 2,
@@ -13,45 +13,14 @@ export const initialState = [
     completed: false,
     date: "2025-09-05",
     description:
-      "Tumar current setup eproper edit functionality ready kore dei.",
+      "Study Next.js fundamentals, including routing, SSR (Server-Side Rendering), and SSG (Static Site Generation), and create a sample Next.js app.",
   },
   {
     id: 3,
-    title: "Learn React js",
+    title: "Learn Node js",
     completed: true,
     date: "2025-09-01",
-    description: "Start with components, props, and hooks",
-  },
-  {
-    id: 4,
-    title: "Learn Next js",
-    completed: false,
-    date: "2025-09-05",
-    description: "Learn SSR, routing, and API routes",
+    description:
+      "Understand the basics of Node.js, including modules, Express.js, and building RESTful APIs, and implement a simple backend project.",
   },
 ];
-// export const initialState = [
-//   {
-//     id: 1,
-//     text: "Learn React js",
-//     completed: true,
-//     color: "green",
-//   },
-//   {
-//     id: 2,
-//     text: "Learn Next js",
-//     completed: false,
-//     color: "red",
-//   },
-//   {
-//     id: 3,
-//     text: "Learn Node js",
-//     completed: true,
-//   },
-//   {
-//     id: 4,
-//     text: "Learn Redux",
-//     completed: false,
-//     color: "yellow",
-//   },
-// ];

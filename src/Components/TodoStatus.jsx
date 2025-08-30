@@ -11,7 +11,7 @@ const TodoStatus = () => {
   const completedTodos = todos.filter((todo) => todo.completed).length;
 
   return (
-    <div className="flex justify-between my-4 text-sm font-medium shadow-2xl p-4 rounded-lg">
+    <div className="flex justify-between my-4 text-sm font-medium bg-white shadow-xl p-4 rounded-lg">
       <p className="flex items-center gap-1">
         <span className="font-bold">{totalTodos}</span> All
       </p>

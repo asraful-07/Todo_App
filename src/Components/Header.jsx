@@ -13,10 +13,8 @@ const Header = () => {
   };
 
   return (
-    <div className="flex justify-between items-center pb-4">
-      <h1 className="text-2xl font-bold text-green-900 dark:text-green-400">
-        TODO
-      </h1>
+    <div className="flex justify-between items-center">
+      <h1 className="text-2xl font-bold text-green-700">TODO</h1>
 
       <button onClick={handleThemeToggle} className="btn btn-ghost btn-circle">
         <svg
