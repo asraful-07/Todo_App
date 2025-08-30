@@ -23,7 +23,9 @@ const todoReducer = (state = initialState, action) => {
         ...state,
         {
           id: nextTodoId(state),
-          text: action.payload,
+          title: action.payload.title,
+          date: action.payload.date,
+          description: action.payload.description,
           completed: false,
           color: null,
         },
@@ -44,9 +46,16 @@ const todoReducer = (state = initialState, action) => {
     }
 
     case EDITED: {
-      const { todoId: editId, newText } = action.payload;
+      const { todoId: editId, updatedTask } = action.payload;
       return state.map((todo) =>
-        todo.id !== editId ? todo : { ...todo, text: newText }
+        todo.id !== editId
+          ? todo
+          : {
+              ...todo,
+              title: updatedTask.title ?? todo.title,
+              date: updatedTask.date ?? todo.date,
+              description: updatedTask.description ?? todo.description,
+            }
       );
     }
 

@@ -33,7 +33,7 @@ const TodoList = () => {
   }
 
   return (
-    <div className="space-y-2">
+    <div className="my-4">
       {filteredTodos.length === 0 ? (
         <p className="text-gray-500 text-center py-4">No todos available....</p>
       ) : (

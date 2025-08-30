@@ -3,14 +3,16 @@ import TodoList from "./Components/TodoList";
 import Footer from "./Components/Footer";
 import Filter from "./Components/Filter";
 import { ToastContainer } from "react-toastify";
-import TodoFrom from "./Components/TodoFrom";
+import Navbar from "./Components/Navbar";
+import TodoStatus from "./Components/TodoStatus";
 
 function App() {
   return (
-    <div className="container mx-auto px-4 md:px-8 shadow-lg rounded-lg p-6">
+    <div className="container mx-auto px-4 md:px-8 p-6">
       <Header />
-      <TodoFrom />
+      <TodoStatus />
       <Filter />
+      <Navbar />
       <ToastContainer
         position="top-right"
         autoClose={2000}

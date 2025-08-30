@@ -8,9 +8,9 @@ import {
   CLEARCOMPLETED,
 } from "./actionTypes";
 
-export const added = (todoText) => ({
+export const added = (task) => ({
   type: ADDED,
-  payload: todoText,
+  payload: task,
 });
 
 export const toggled = (todoId) => ({
@@ -26,11 +26,11 @@ export const colorSelected = (todoId, color) => ({
   },
 });
 
-export const edited = (todoId, newText) => ({
+export const edited = (todoId, updatedTask) => ({
   type: EDITED,
   payload: {
     todoId,
-    newText,
+    updatedTask,
   },
 });
 

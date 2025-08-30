@@ -1,73 +1,55 @@
 import { useSelector, useDispatch } from "react-redux";
-import { setStatusFilter, toggleColorFilter } from "../redux/filters/action";
+import { setStatusFilter } from "../redux/filters/action";
+import logo from "../assets/image_logo.jpg";
+import { useState } from "react";
 
-export default function Filter() {
-  const todos = useSelector((state) => state.todos);
+export default function Filter({ onSearch }) {
   const filters = useSelector((state) => state.filters);
   const dispatch = useDispatch();
+  const [searchText, setSearchText] = useState("");
 
-  const todosRemaining = todos.filter((todo) => !todo.completed).length;
-
-  const handleStatusChange = (status) => {
-    dispatch(setStatusFilter(status));
+  const handleStatusChange = (e) => {
+    dispatch(setStatusFilter(e.target.value));
   };
 
-  const handleColorChange = (color) => {
-    const changeType = filters.colors.includes(color) ? "removed" : "added";
-    dispatch(toggleColorFilter(color, changeType));
+  const handleSearch = (e) => {
+    setSearchText(e.target.value);
+    if (onSearch) {
+      onSearch(e.target.value);
+    }
   };
 
   return (
-    <div className="my-4 flex justify-between text-sm text-gray-500">
-      <p>{todosRemaining} todo left</p>
+    <div className="my-4 flex justify-between items-center px-4 py-2 bg-gray-100 rounded-lg shadow-sm">
+      {/* Left side: Logo */}
+      <div className="flex items-center space-x-2">
+        <img src={logo} alt="Logo" className="h-8 w-8 rounded-full" />
+        <h1 className="font-bold text-gray-700 text-lg">My Todos</h1>
+      </div>
 
-      <ul className="flex space-x-1 items-center text-xs">
-        <li
-          onClick={() => handleStatusChange("All")}
-          className={`cursor-pointer ${
-            filters.status === "All" ? "underline font-bold" : ""
-          }`}
-        >
-          All
-        </li>
-        <li>|</li>
-        <li
-          onClick={() => handleStatusChange("Active")}
-          className={`cursor-pointer ${
-            filters.status === "Active" ? "underline font-bold" : ""
-          }`}
-        >
-          Active
-        </li>
-        <li>|</li>
-        <li
-          onClick={() => handleStatusChange("Completed")}
-          className={`cursor-pointer ${
-            filters.status === "Completed" ? "underline font-bold" : ""
-          }`}
-        >
-          Completed
-        </li>
+      {/* Center: Search */}
+      <div className="flex-1 mx-6">
+        <input
+          type="text"
+          placeholder="Search by title..."
+          value={searchText}
+          onChange={handleSearch}
+          className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+        />
+      </div>
 
-        <li
-          onClick={() => handleColorChange("green")}
-          className={`h-3 w-3 border-2 border-green-500 rounded-full cursor-pointer ml-2 ${
-            filters.colors.includes("green") ? "bg-green-500" : ""
-          }`}
-        ></li>
-        <li
-          onClick={() => handleColorChange("red")}
-          className={`h-3 w-3 border-2 border-red-500 rounded-full cursor-pointer ${
-            filters.colors.includes("red") ? "bg-red-500" : ""
-          }`}
-        ></li>
-        <li
-          onClick={() => handleColorChange("yellow")}
-          className={`h-3 w-3 border-2 border-yellow-500 rounded-full cursor-pointer ${
-            filters.colors.includes("yellow") ? "bg-yellow-500" : ""
-          }`}
-        ></li>
-      </ul>
+      {/* Right side: Dropdown */}
+      <div>
+        <select
+          value={filters.status}
+          onChange={handleStatusChange}
+          className="px-3 py-2 border rounded-lg bg-white cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-400"
+        >
+          <option value="All">All</option>
+          <option value="Active">Active</option>
+          <option value="Completed">Completed</option>
+        </select>
+      </div>
     </div>
   );
 }
